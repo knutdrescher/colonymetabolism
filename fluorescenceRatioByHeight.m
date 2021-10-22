@@ -13,7 +13,7 @@ if invert
     img_c2 = img_c2(:,:,end:-1:1);
 end
 
-[mask,~] = getColonyMask_v1_cleanup(imresize(img, rescaleFactor), 1);
+[mask,~] = getColonyMask(imresize(img, rescaleFactor), 1);
 
 relevantSlices = squeeze(sum(sum(mask,1),2))>0;
 relevantSlices = find(relevantSlices);
