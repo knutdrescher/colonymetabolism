@@ -10,13 +10,12 @@ dist = 30; %?m
 
 
 img = imresize(img, rescaleFactor);
-img_c2 = imresize(img_c2, rescaleFactor);
 
 % invert image
 img = img(:,:,end:-1:1);
 img_c2 = img_c2(:,:,end:-1:1);
 
-[mask,~] = getColonyMask_v1_cleanup(img, 1);
+[mask,~] = getColonyMask(img, 1);
 
 relevantSlices = squeeze(sum(sum(mask,1),2))>0;
 relevantSlices = find(relevantSlices);
